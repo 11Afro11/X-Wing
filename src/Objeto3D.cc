@@ -7,6 +7,8 @@ Objeto3D::Objeto3D(){
 }
 
 void Objeto3D::Dibujar(int mode, int colour){
+	// glGenBuffers(1, &caras);
+	// glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, caras);
 	TraslacionEscalada();
 	//tipo enumerado para deibujar y para el parámetro del polygon mode
 	GLenum dibujado = GL_TRIANGLES;
