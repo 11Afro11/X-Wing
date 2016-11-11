@@ -4,12 +4,14 @@
 
 
 Objeto3D::Objeto3D(){
+	angulo = x = y = z = 0;
 }
 
 void Objeto3D::Dibujar(int mode, int colour){
 	// glGenBuffers(1, &caras);
 	// glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, caras);
 	TraslacionEscalada();
+	// glRotatef(angulo, x, y, z);
 	//tipo enumerado para deibujar y para el parámetro del polygon mode
 	GLenum dibujado = GL_TRIANGLES;
 	GLenum parametro = GL_FILL;
@@ -178,6 +180,19 @@ void Objeto3D::TraslacionEscalada(){
 	// 	vertices[i] *= escala;
 	// }
 	glScalef(lado, lado, lado);
+}
+
+void Objeto3D::Escalar(GLfloat esc){
+	lado =lado/esc;
+}
+void Objeto3D::Rotar(GLfloat ang, GLfloat x, GLfloat y, GLfloat z){
+	glRotatef(ang, x, y, z);
+}
+
+void Objeto3D::Trasladar(GLfloat x, GLfloat y, GLfloat z){
+	medio[0] += x;
+	medio[1] += y;
+	medio[2] += z;
 }
 
 

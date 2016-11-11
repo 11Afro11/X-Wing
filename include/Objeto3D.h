@@ -17,6 +17,7 @@ class Objeto3D{
 		Colors color;
 		GLfloat medio[3];
 		GLfloat lado;
+		GLfloat angulo, x, y, z;
 		// std::vector<GLfloat> colores;
 
 
@@ -60,6 +61,13 @@ class Objeto3D{
 		float BoundingBox();
 
 		void TraslacionEscalada();
+
+		void Escalar(GLfloat esc);
+
+		void Rotar(GLfloat ang, GLfloat x, GLfloat y, GLfloat z);
+
+
+		void Trasladar(GLfloat x, GLfloat y, GLfloat z);
 
 
 };

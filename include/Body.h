@@ -10,6 +10,10 @@ class Body{ //hereda de Objeto3D
 private:
 	Objeto3D base;
 	Objeto3D cabina;
+	Objeto3D hierro;
+	Objeto3D puntita;
+	Objeto3D cosa;
+	Objeto3D atras;
 public:
 	Body();
 	void Dibujar(int mode, int colour);

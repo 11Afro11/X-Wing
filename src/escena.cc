@@ -64,7 +64,7 @@ Escena::Escena(){
     // for(int i = 0; i < obj.size(); i++){
     //   obj[i].BoundingBox();
     // }
-    cuerpo.BoundingBox();
+    // cuerpo.BoundingBox();
 
 
 
