@@ -26,6 +26,8 @@
 #include "Ply.h"
 #include "ObjetoDeRevolucion.h"
 #include "Body.h"
+#include "Wing.h"
+#include "XWing.h"
 // #include "Peon.h"
 
 
@@ -51,6 +53,8 @@ int col = 0;
 std::vector<Objeto3D> obj;
 std::vector<ObjetoDeRevolucion> objr;
 Body cuerpo;
+Wing wing;
+XWing xwing;
 
 int indice;
 

@@ -35,8 +35,8 @@ CC = g++
 
 # definicion de objetos
 #
-HEADERS = $(addprefix $(INC)/, escena.h ejes.h Objeto3D.h Colors.h file_ply_stl.h Ply.h ObjetoDeRevolucion.h Body.h)
-OBJECTS= $(addprefix $(OBJ)/, escena.o ejes.o practica2.o Objeto3D.o file_ply_stl.o Ply.o ObjetoDeRevolucion.o Body.o)
+HEADERS = $(addprefix $(INC)/, escena.h ejes.h Objeto3D.h Colors.h file_ply_stl.h Ply.h ObjetoDeRevolucion.h Body.h Wing.h XWing.h)
+OBJECTS= $(addprefix $(OBJ)/, escena.o ejes.o practica2.o Objeto3D.o file_ply_stl.o Ply.o ObjetoDeRevolucion.o Body.o Wing.o XWing.o)
 # orden que sera ejecutada por defecto
 #
 default : $(TARGETS)

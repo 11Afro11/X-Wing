@@ -185,6 +185,11 @@ void Objeto3D::TraslacionEscalada(){
 void Objeto3D::Escalar(GLfloat esc){
 	lado =lado/esc;
 }
+
+void Objeto3D::Escalar(GLfloat x, GLfloat y, GLfloat z){
+	glScalef(x, y, z);
+}
+
 void Objeto3D::Rotar(GLfloat ang, GLfloat x, GLfloat y, GLfloat z){
 	glRotatef(ang, x, y, z);
 }

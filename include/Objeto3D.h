@@ -64,6 +64,8 @@ class Objeto3D{
 
 		void Escalar(GLfloat esc);
 
+		void Escalar(GLfloat x, GLfloat y, GLfloat z);
+
 		void Rotar(GLfloat ang, GLfloat x, GLfloat y, GLfloat z);
 
 

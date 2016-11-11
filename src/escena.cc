@@ -39,35 +39,6 @@ Escena::Escena(){
     tapa = 0;
     base = 0;
 
-    // Ply xwing("./ply/xwin.ply");
-    // obj.push_back(xwing);
-    // Ply cabina("./ply/Cabina.ply");
-    // obj.push_back(cabina);
-    // Ply cabinaHierro("./ply/CabinaHierro.ply");
-    // obj.push_back(cabinaHierro);
-    // Ply puntita("./ply/Puntita.ply");
-    // obj.push_back(puntita);
-    // Ply wing("./ply/wing.ply");
-    // obj.push_back(wing);
-    // Ply cosarara("./ply/CosaRara.ply");
-    // obj.push_back(cosarara);
-    // Ply cosatrasera("./ply/CosaDeAtras.ply");
-    // obj.push_back(cosatrasera);
-    // Ply r2d2("./ply/R2D2.ply");
-    // obj.push_back(r2d2);
-
-
-    // Body cuerpo;
-    // obj.push_back(cuerpo);
-
-
-    // for(int i = 0; i < obj.size(); i++){
-    //   obj[i].BoundingBox();
-    // }
-    // cuerpo.BoundingBox();
-
-
-
 }
 
 
@@ -107,7 +78,8 @@ void Escena::inicializar(int UI_window_width,int UI_window_height) {
 //***************************************************************************
 
 void Escena::draw_objects() {
-  cuerpo.Dibujar(mode,col);
+  xwing.Dibujar(mode,col);
+  // wing.Dibujar(mode, col);
 }
 
 
@@ -144,47 +116,10 @@ int Escena::teclaPulsada(unsigned char Tecla1,int x,int y) {
 
     unsigned char Tecla = toupper(Tecla1);
 
-    // if(Tecla != 'Z'){
-    // 	obj.DisableCullFace();
-    // 	mitad = 0;
-    // }
-    // if(mitad == 0) obj.DisableCullFace();
-    // else if(mitad == 1) obj.EnableCullFace();
-
-
-
     switch(Tecla){
 
     	case 'Q': return 1;
 
-
-
-    	// case 'N':
-    	// 	indice++;
-      //   bool cond;
-      //   if(flag == 0)cond = indice > obj.size()-1;
-      //   else cond = indice > objr.size()-1;
-    	// 	if(cond){
-		  //   	indice = 0;
-      //     if(flag == 0)
-      //       flag = 1;
-      //     else
-      //       flag = 0;
-		  //   }
-    	// 	return 0;
-    	// case 'B':
-    	// 	indice--;
-      //   int pos;
-      //   if(flag == 0)pos = objr.size()-1;
-      //   else pos = obj.size()-1;
-    	// 	if(indice < 0){
-		  //   	indice = pos;
-      //     if(flag == 0)
-      //       flag = 1;
-      //     else
-      //       flag = 0;
-		  //   }
-    	// 	return 0;
 
 
 
@@ -215,54 +150,6 @@ int Escena::teclaPulsada(unsigned char Tecla1,int x,int y) {
 			mode = 3;
 
 			return 0;
-
-
-
-		// case 'V': //varicolor
-    //
-		// 	mode = 4;
-    //
-		// 	return 0;
-    //
-		// case 'M': //Cambiacolor
-    //
-		// 	mode = 0;
-		// 	col = obj[0].CambiaColor();
-    //
-		// 	return 0;
-    //
-    // case 'X': //Cambiacolor
-    //   objr[indice].Resize(1);
-    //   objr[indice].BoundingBox();
-    //
-		// 	return 0;
-    //
-    // case 'Z': //Cambiacolor
-    //   objr[indice].Resize(0);
-    //   objr[indice].BoundingBox();
-    //
-		// 	return 0;
-    //
-    // case 'T': //Cambiacolor
-    //
-    //   objr[indice].ConSinTapa(tapa);
-    //   objr[indice].BoundingBox();
-    //   if(tapa == 0)
-    //     tapa = 1;
-    //   else
-    //     tapa = 0;
-    //   return 0;
-    //
-    // case 'Y': //Cambiacolor
-    //
-    //   objr[indice].ConSinBase(base);
-    //   objr[indice].BoundingBox();
-    //   if(base == 0)
-    //     base = 1;
-    //   else
-    //     base = 0;
-    //   return 0;
-
 
 
 		default: return 0;

@@ -29,9 +29,9 @@ Body::Body(){
   atras.Trasladar(0,0,5);
   atras.Trasladar(0,-17,0);
   // puntita.Trasladar(0,10,0);
-  puntita.Escalar(1.1);
-  puntita.Trasladar(0,-30,0);
-  puntita.Trasladar(0,0,8);
+  puntita.Escalar(1.19);
+  puntita.Trasladar(0,-29,0);
+  puntita.Trasladar(0,0,5.5);
 
 
 }
@@ -53,7 +53,7 @@ void Body::Dibujar(int mode, int colour){
     glPopMatrix();
     glPushMatrix();
         // puntita.Rotar(-90,1,0,0);
-        puntita.Dibujar(mode,3);
+        puntita.Dibujar(mode,0);
     glPopMatrix();
     glPushMatrix();
         // cosa.Rotar(-90,1,0,0);
