@@ -4,6 +4,10 @@
 Wing::Wing(){
   Ply aux("./ply/wing.ply");
   ala = aux;
+  posz = 0;
+  posx =0;
+  posy = 0;
+  rotacion = 0;
 
   ala.BoundingBox();
 

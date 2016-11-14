@@ -112,7 +112,14 @@ int Escena::teclaPulsada(unsigned char Tecla1,int x,int y) {
     // std::cout << "Mitad" << mitad<< std::endl;
     // std::cout << "Culld" << obj.Say()<< std::endl;
 
-
+    if(indice < 0){
+      xwing.SetAngulo(indice);
+      indice--;
+      if(indice < -20){
+        indice = 0;
+      }
+      return 0;
+    }
 
     unsigned char Tecla = toupper(Tecla1);
 
@@ -121,9 +128,49 @@ int Escena::teclaPulsada(unsigned char Tecla1,int x,int y) {
     	case 'Q': return 1;
 
 
+      case 'W': //palante
 
+  			xwing.Mueve(0,0,2);
 
-    	case 'L': //lineas
+  			return 0;
+
+      case 'S': //patras
+
+  			xwing.Mueve(0,0,-2);
+
+  			return 0;
+
+    case 'D': //derecha
+
+      xwing.Rotar(2);
+
+      return 0;
+
+    case 'A': //izquierda
+
+      xwing.Rotar(-2);
+
+      return 0;
+
+    case 'M': //palante
+
+			xwing.SetAngulo(1);
+
+			return 0;
+
+    case 'N': //palante
+
+			xwing.SetAngulo(-1);
+
+			return 0;
+
+    case 'P': //palante
+
+			indice = -1;
+
+			return 0;
+
+    case 'L': //lineas
 
 			mode = 1;
 
@@ -131,7 +178,7 @@ int Escena::teclaPulsada(unsigned char Tecla1,int x,int y) {
 
 
 
-		case 'S': //solido
+		case 'J': //solido
 
 			mode = 0;
 
@@ -139,13 +186,13 @@ int Escena::teclaPulsada(unsigned char Tecla1,int x,int y) {
 
 
 
-		case 'D': //punto
+		case 'K': //punto
 
 			mode = 2;
 
 			return 0;
 
-		case 'A': //ajedrez
+		case 'C': //ajedrez
 
 			mode = 3;
 

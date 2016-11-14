@@ -14,10 +14,16 @@ private:
 	Objeto3D puntita;
 	Objeto3D cosa;
 	Objeto3D atras;
+	float posz;
+	float posx;
+	float posy;
+	float rotacion;
 public:
 	Body();
 	void Dibujar(int mode, int colour);
 	void BoundingBox();
+	void Mueve(float val, float val2, float val3);
+	void Rotar(float ang);
+	void Volver();
 };
-
 #endif
