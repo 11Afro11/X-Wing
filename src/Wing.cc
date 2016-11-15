@@ -18,7 +18,7 @@ Wing::Wing(){
 void Wing::Dibujar(int mode, int colour){
   glPushMatrix();
     glPushMatrix();
-        // ala.Rotar(-90, 1,0,0);
+        ala.Rotar(-90, 1,0,0);
         ala.Dibujar(mode, 0);
     glPopMatrix();
   glPopMatrix();

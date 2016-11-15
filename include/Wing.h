@@ -20,20 +20,34 @@ public:
 	void Escalar(GLfloat x, GLfloat y, GLfloat z){
 		ala.Escalar(x, y, z);
 	}
+
+	void Rotar(GLfloat ang){
+		rotacion = ang;
+	}
+
 	void Rotar(GLfloat ang, GLfloat x, GLfloat y, GLfloat z){
 		// Vuelve();
 		ala.Rotar(ang, x, y, z);
+		// Recoloca();
 		// Mueve(posx, posy, posz);
 	}
 	void Mueve(float val1, float val2, float val3){
 		posx = val1;
 		posy = val2;
 		posz = val3;
-		ala.Trasladar(posx, posz, posy);
+		ala.Trasladar(val1, val3, val2);
 	}
 	void Vuelve(){
-		ala.Trasladar(-posx, -posy, -posz);
+		ala.Trasladar(-posx, -posz, -posy);
+		posx = 0;
+		posy = 0;
+		posz = 0;
 	}
+	void Recoloca(){
+		ala.Trasladar(posx, posz, posy);
+	}
+
+
 };
 
 #endif

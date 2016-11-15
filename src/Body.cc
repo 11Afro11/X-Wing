@@ -33,6 +33,9 @@ Body::Body(){
   puntita.Trasladar(0,-29,0);
   puntita.Trasladar(0,0,5.5);
   posz = 0;
+  posx =0;
+  posy = 0;
+  rotacion = 0;
 
 
 }
@@ -41,26 +44,32 @@ Body::Body(){
 void Body::Dibujar(int mode, int colour){
   glPushMatrix();
     glPushMatrix();
+        // base.Rotar(rotacion, 0, 1, 0);
         base.Rotar(-90, 1,0,0);
         base.Dibujar(mode, 0);
     glPopMatrix();
     glPushMatrix();
+        // cabina.Rotar(rotacion, 0, 1, 0);
         cabina.Rotar(-90, 1,0,0);
         cabina.Dibujar(mode,1);
     glPopMatrix();
     glPushMatrix();
+        // hierro.Rotar(rotacion, 0, 1, 0);
         hierro.Rotar(-90,1,0,0);
         hierro.Dibujar(mode,2);
     glPopMatrix();
     glPushMatrix();
+        // puntita.Rotar(rotacion, 0, 1, 0);
         puntita.Rotar(-90,1,0,0);
         puntita.Dibujar(mode,0);
     glPopMatrix();
     glPushMatrix();
+        // cosa.Rotar(rotacion, 0, 1, 0);
         cosa.Rotar(-90,1,0,0);
         cosa.Dibujar(mode,4);
     glPopMatrix();
     glPushMatrix();
+        // atras.Rotar(rotacion, 0, 1, 0);
         atras.Rotar(-90,1,0,0);
         atras.Dibujar(mode,4);
     glPopMatrix();
@@ -78,23 +87,23 @@ void Body::Mueve(float val1, float val2, float val3){
   posx = val1;
   posy = val2;
   posz = val3;
-  base.Trasladar(posx,posz,posy);
-  cabina.Trasladar(posx,posz,posy);
-  hierro.Trasladar(posx,posz,posy);
-  puntita.Trasladar(posx,posz,posy);
-  cosa.Trasladar(posx,posz,posy);
-  atras.Trasladar(posx,posz,posy);
+  base.Trasladar(val1,val3,val2);
+  cabina.Trasladar(val1,val3,val2);
+  hierro.Trasladar(val1,val3,val2);
+  puntita.Trasladar(val1,val3,val2);
+  cosa.Trasladar(val1,val3,val2);
+  atras.Trasladar(val1,val3,val2);
 }
 
 void Body::Rotar(float ang){
-  Volver();
-  base.Rotar(ang, 0,1,0);
-  cabina.Rotar(ang, 0,1,0);
-  hierro.Rotar(ang, 0,1,0);
-  puntita.Rotar(ang, 0,1,0);
-  cosa.Rotar(ang, 0,1,0);
-  atras.Rotar(ang, 0,1,0);
-  Mueve(posx, posy, posz);
+  rotacion = ang;
+  base.Rotar(rotacion, 0,1,0);
+  cabina.Rotar(rotacion, 0,1,0);
+  hierro.Rotar(rotacion, 0,1,0);
+  puntita.Rotar(rotacion, 0,1,0);
+  cosa.Rotar(rotacion, 0,1,0);
+  atras.Rotar(rotacion, 0,1,0);
+
 }
 
 void Body::Volver(){
@@ -104,4 +113,16 @@ void Body::Volver(){
   puntita.Trasladar(-posx,-posz,-posy);
   cosa.Trasladar(-posx,-posz,-posy);
   atras.Trasladar(-posx,-posz,-posy);
+  posx = 0;
+  posy = 0;
+  posz = 0;
+}
+
+void Body::Recoloca(){
+  base.Trasladar(posx,posz,posy);
+  cabina.Trasladar(posx,posz,posy);
+  hierro.Trasladar(posx,posz,posy);
+  puntita.Trasladar(posx,posz,posy);
+  cosa.Trasladar(posx,posz,posy);
+  atras.Trasladar(posx,posz,posy);
 }

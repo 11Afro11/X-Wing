@@ -140,8 +140,13 @@ int Escena::teclaPulsada(unsigned char Tecla1,int x,int y) {
 
   			return 0;
 
-    case 'D': //derecha
+    // case 'V': //patras
+    //
+		// 	xwing.Volver();
+    //
+		// 	return 0;
 
+    case 'D': //derecha
       xwing.Rotar(2);
 
       return 0;

@@ -14,6 +14,7 @@ private:
 	Wing ala1, ala2,ala3, ala4;
 	float angAla;
 	float rotacion;
+	float posx, posy, posz;
 public:
 	XWing();
 	void Dibujar(int mode, int colour);
@@ -29,6 +30,8 @@ public:
 		}
 	}
 	void Rotar(float ang);
+	void AplicaRotacion();
+	void Volver(float &aux1, float &aux2, float &aux3);
 };
 
 #endif
