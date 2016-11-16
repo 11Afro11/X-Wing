@@ -32,10 +32,10 @@ public:
 		// Mueve(posx, posy, posz);
 	}
 	void Mueve(float val1, float val2, float val3){
-		posx = val1;
-		posy = val2;
-		posz = val3;
-		ala.Trasladar(val1, val3, val2);
+		// posx = val1;
+		// posy = val2;
+		// posz = val3;
+		ala.Movimiento(val1, val2, val3);
 	}
 	void Vuelve(){
 		ala.Trasladar(-posx, -posz, -posy);

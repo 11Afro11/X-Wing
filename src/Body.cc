@@ -84,15 +84,15 @@ void Body::BoundingBox(){
 
 
 void Body::Mueve(float val1, float val2, float val3){
-  posx = val1;
-  posy = val2;
-  posz = val3;
-  base.Trasladar(val1,val3,val2);
-  cabina.Trasladar(val1,val3,val2);
-  hierro.Trasladar(val1,val3,val2);
-  puntita.Trasladar(val1,val3,val2);
-  cosa.Trasladar(val1,val3,val2);
-  atras.Trasladar(val1,val3,val2);
+  // posx = val1;
+  // posy = val2;
+  // posz = val3;
+  base.Movimiento(val1,val2,val3);
+  cabina.Movimiento(val1,val2,val3);
+  hierro.Movimiento(val1,val2,val3);
+  puntita.Movimiento(val1,val2,val3);
+  cosa.Movimiento(val1,val2,val3);
+  atras.Movimiento(val1,val2,val3);
 }
 
 void Body::Rotar(float ang){

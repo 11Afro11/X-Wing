@@ -200,5 +200,9 @@ void Objeto3D::Trasladar(GLfloat x, GLfloat y, GLfloat z){
 	medio[2] += z;
 }
 
+void Objeto3D::Movimiento(GLfloat x, GLfloat y, GLfloat z){
+	glTranslatef(x, y, z);
+}
+
 
 // void Objeto3D::Resize(int i){}

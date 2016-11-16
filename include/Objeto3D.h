@@ -71,6 +71,8 @@ class Objeto3D{
 
 		void Trasladar(GLfloat x, GLfloat y, GLfloat z);
 
+		void Movimiento(GLfloat x, GLfloat y, GLfloat z);
+
 
 };
 #endif

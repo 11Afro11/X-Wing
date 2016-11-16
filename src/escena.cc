@@ -130,13 +130,14 @@ int Escena::teclaPulsada(unsigned char Tecla1,int x,int y) {
 
       case 'W': //palante
 
-  			xwing.Mueve(0,0,2);
+        indice++;
+  			xwing.Mueve(0,0,indice);
 
   			return 0;
 
       case 'S': //patras
-
-  			xwing.Mueve(0,0,-2);
+        indice--;
+  			xwing.Mueve(0,0,indice);
 
   			return 0;
 
@@ -147,13 +148,14 @@ int Escena::teclaPulsada(unsigned char Tecla1,int x,int y) {
 		// 	return 0;
 
     case 'D': //derecha
-      xwing.Rotar(2);
+      flag-=2;
+      xwing.turnRight();
 
       return 0;
 
     case 'A': //izquierda
-
-      xwing.Rotar(-2);
+      flag+=2;
+      xwing.turnLeft();
 
       return 0;
 
