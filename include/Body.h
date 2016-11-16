@@ -21,10 +21,5 @@ private:
 public:
 	Body();
 	void Dibujar(int mode, int colour);
-	void BoundingBox();
-	void Mueve(float val, float val2, float val3);
-	void Rotar(float ang);
-	void Volver();
-	void Recoloca();
 };
 #endif

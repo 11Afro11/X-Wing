@@ -25,6 +25,7 @@ Body::Body(){
   cabina.Escalar(4);
   hierro.Escalar(3.8);
   cosa.Escalar(3.1);
+  cosa.Trasladar(0,-10,0);
   atras.Escalar(2.9);
   atras.Trasladar(0,0,5);
   atras.Trasladar(0,-17,0);
@@ -75,54 +76,4 @@ void Body::Dibujar(int mode, int colour){
     glPopMatrix();
   glPopMatrix();
 
-}
-
-void Body::BoundingBox(){
-  base.BoundingBox();
-  cabina.BoundingBox();
-}
-
-
-void Body::Mueve(float val1, float val2, float val3){
-  // posx = val1;
-  // posy = val2;
-  // posz = val3;
-  base.Movimiento(val1,val2,val3);
-  cabina.Movimiento(val1,val2,val3);
-  hierro.Movimiento(val1,val2,val3);
-  puntita.Movimiento(val1,val2,val3);
-  cosa.Movimiento(val1,val2,val3);
-  atras.Movimiento(val1,val2,val3);
-}
-
-void Body::Rotar(float ang){
-  rotacion = ang;
-  base.Rotar(rotacion, 0,1,0);
-  cabina.Rotar(rotacion, 0,1,0);
-  hierro.Rotar(rotacion, 0,1,0);
-  puntita.Rotar(rotacion, 0,1,0);
-  cosa.Rotar(rotacion, 0,1,0);
-  atras.Rotar(rotacion, 0,1,0);
-
-}
-
-void Body::Volver(){
-  base.Trasladar(-posx,-posz,-posy);
-  cabina.Trasladar(-posx,-posz,-posy);
-  hierro.Trasladar(-posx,-posz,-posy);
-  puntita.Trasladar(-posx,-posz,-posy);
-  cosa.Trasladar(-posx,-posz,-posy);
-  atras.Trasladar(-posx,-posz,-posy);
-  posx = 0;
-  posy = 0;
-  posz = 0;
-}
-
-void Body::Recoloca(){
-  base.Trasladar(posx,posz,posy);
-  cabina.Trasladar(posx,posz,posy);
-  hierro.Trasladar(posx,posz,posy);
-  puntita.Trasladar(posx,posz,posy);
-  cosa.Trasladar(posx,posz,posy);
-  atras.Trasladar(posx,posz,posy);
 }

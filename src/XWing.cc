@@ -19,7 +19,6 @@ void XWing::Dibujar(int mode, int colour){
         // AplicaRotacion();
     glTranslatef(posx, posy, posz);
     glRotatef(rotacion, 0,1,0);
-
     // glPopMatrix();
 
     glPushMatrix();
@@ -47,26 +46,23 @@ void XWing::Dibujar(int mode, int colour){
     glPopMatrix();
         // ala.Rotar(-90, 1,0,0);
         cuerpo.Dibujar(mode, 0);
+        arturito.Dibujar(mode, 0);
   glPopMatrix();
 
 }
 
-void XWing::BoundingBox(){
+
+void XWing::moveFoward(){
+
+  posx += 2*sin((rotacion*M_PI)/180);
+  posz += 2*cos((rotacion*M_PI)/180);
+
 }
 
-void XWing::Mueve(float val1, float val2, float val3){
+void XWing::moveBack(){
 
-  posx += 0.5*sin((rotacion*M_PI)/180);
-  posy = val2;
-  posz += 0.5*cos((rotacion*M_PI)/180);
-  // if(val3>0 and posz <0 or val3 < 0 and posz>0){
-  //   posz *= -1;
-  // }
-  // cuerpo.Mueve(val1, val2, val3);
-  // ala1.Mueve(val1, val2, val3);
-  // ala2.Mueve(val1, val2, val3);
-  // ala3.Mueve(val1, val2, val3);
-  // ala4.Mueve(val1, val2, val3);
+  posx -= 2*sin((rotacion*M_PI)/180);
+  posz -= 2*cos((rotacion*M_PI)/180);
 
 }
 
@@ -78,62 +74,18 @@ void XWing::turnRight() {
     rotacion = (rotacion - 5) % 360;
 }
 
-void XWing::Rotar(float ang){
-  rotacion = ang;
-
-  vdirector[0] = sin((rotacion*M_PI)/180)*vdirector[2] + cos((rotacion*M_PI)/180)*vdirector[0];
-
-
-  // posz+=val3;
-  vdirector[2] = cos((rotacion*M_PI)/180)*vdirector[2] - sin((rotacion*M_PI)/180)*vdirector[0];
-  // ala1.Vuelve();
-  // ala2.Vuelve();
-  // ala3.Vuelve();
-  // ala4.Vuelve();
-  // cuerpo.Volver();
-  // ala1.Rotar(rotacion);
-  // ala2.Rotar(rotacion);
-  // ala3.Rotar(rotacion);
-  // ala4.Rotar(rotacion);
-  // cuerpo.Rotar(rotacion);
-  // ala1.Recoloca();
-  // ala2.Recoloca();
-  // ala3.Recoloca();
-  // ala4.Recoloca();
-  // cuerpo.Recoloca();
-
-
+void XWing::moveR2(){
+  arturito.Rotar(2);
 }
 
-void XWing::AplicaMovimiento(){
-  cuerpo.Mueve(posx, posy, posz);
-  ala1.Mueve(posx, posy, posz);
-  ala2.Mueve(posx, posy, posz);
-  ala3.Mueve(posx, posy, posz);
-  ala4.Mueve(posx, posy, posz);
-}
 
-void XWing::AplicaRotacion(){
-  // float aux1, aux2, aux3;
-  // Volver(aux1, aux2, aux3);
-  ala1.Rotar(rotacion*M_PI/180, 0, 1, 0);
-  ala2.Rotar(rotacion*M_PI/180, 0, 1, 0);
-  ala3.Rotar(rotacion*M_PI/180, 0, 1, 0);
-  ala4.Rotar(rotacion*M_PI/180, 0, 1, 0);
-  cuerpo.Rotar(rotacion*M_PI/180);
-  // Mueve(aux1,aux2,aux3);
-}
 
-void XWing::Volver(float &aux1, float &aux2, float &aux3){
-  ala1.Vuelve();
-  ala2.Vuelve();
-  ala3.Vuelve();
-  ala4.Vuelve();
-  cuerpo.Volver();
-  aux1 = posx;
-  aux2 = posy;
-  aux3 = posz;
-  posx = 0;
-  posy = 0;
-  posz = 0;
+void XWing::SetAngulo(float val){
+  angAla += val;
+  if(angAla < -20){
+    angAla = -20;
+  }
+  if(angAla > 0){
+    angAla = 0;
+  }
 }

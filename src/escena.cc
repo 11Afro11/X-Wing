@@ -129,16 +129,11 @@ int Escena::teclaPulsada(unsigned char Tecla1,int x,int y) {
 
 
       case 'W': //palante
-
-        indice++;
-  			xwing.Mueve(0,0,indice);
-
+  			xwing.moveFoward();
   			return 0;
 
       case 'S': //patras
-        indice--;
-  			xwing.Mueve(0,0,indice);
-
+  			xwing.moveBack();
   			return 0;
 
     // case 'V': //patras
@@ -158,6 +153,11 @@ int Escena::teclaPulsada(unsigned char Tecla1,int x,int y) {
       xwing.turnLeft();
 
       return 0;
+    case 'P': //izquierda
+
+      xwing.moveR2();
+
+      return 0;
 
     case 'M': //palante
 
@@ -171,11 +171,11 @@ int Escena::teclaPulsada(unsigned char Tecla1,int x,int y) {
 
 			return 0;
 
-    case 'P': //palante
-
-			indice = -1;
-
-			return 0;
+    // case 'P': //palante
+    //
+		// 	indice = -1;
+    //
+		// 	return 0;
 
     case 'L': //lineas
 
