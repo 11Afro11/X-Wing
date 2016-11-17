@@ -149,19 +149,19 @@ int Escena::teclaPulsada(unsigned char Tecla1,int x,int y) {
       return 0;
 
     case 'A': //izquierda
-      flag+=2;
+
       xwing.turnLeft();
 
       return 0;
 
     case 'E': //derecha
-      flag-=2;
+
       xwing.up();
 
       return 0;
 
     case 'R': //izquierda
-      flag+=2;
+      
       xwing.down();
 
       return 0;
