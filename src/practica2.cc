@@ -101,7 +101,7 @@ glutInit(&argc, argv);
 glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
 
 // variables que determninan la posicion y tamaño de la ventana X
-int UI_window_pos_x=50,UI_window_pos_y=50,UI_window_width=500,UI_window_height=500;
+int UI_window_pos_x=50,UI_window_pos_y=50,UI_window_width=1920,UI_window_height=1080;
 
 // posicion de la esquina inferior izquierdad de la ventana
 glutInitWindowPosition(UI_window_pos_x,UI_window_pos_y);
