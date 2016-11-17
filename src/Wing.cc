@@ -56,3 +56,8 @@ void Wing::Disparar(){
     disparo = false;
   }
 }
+
+void Wing::disparado(){
+  disp = 0;
+  disparo = false;
+}

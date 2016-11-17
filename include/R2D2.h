@@ -26,6 +26,7 @@ public:
 	void moveR2();
 	void Ejecta();
 	void Nuevo();
+	
 
 
 };

@@ -33,6 +33,9 @@ public:
 	void Ejecta();
 	void Nuevo();
 	void Disparar();
+	bool abierta();
+	bool cerrada();
+	void disparado();
 };
 
 #endif

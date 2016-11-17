@@ -50,6 +50,8 @@ int figure = 0;
 
 int col = 0;
 
+int numAnimacion = 0;
+
 std::vector<Objeto3D> obj;
 std::vector<ObjetoDeRevolucion> objr;
 Body cuerpo;
@@ -101,6 +103,7 @@ private:
 
 
 
+
 public:
 
      Escena();
@@ -122,6 +125,8 @@ public:
 	int teclaPulsada(unsigned char Tecla1,int x,int y) ;
 
 	void teclaEspecial(int Tecla1,int x,int y);
+
+	void Animar();
 
 };
 

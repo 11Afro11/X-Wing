@@ -184,20 +184,38 @@ int Escena::teclaPulsada(unsigned char Tecla1,int x,int y) {
 			return 0;
 
     case 'Z': //palante
-
-			xwing.Disparar();
+      if(flag == 0){
+        numAnimacion = 3;
+        flag = 1;
+      }
+      else{
+        numAnimacion = 0;
+        xwing.disparado();
+        flag = 0;
+      }
+			// xwing.Disparar();
 
 			return 0;
 
     case 'M': //palante
 
-			xwing.SetAngulo(1);
+      numAnimacion = 1;
+      if(flag == 1){
+        xwing.disparado();
+        flag = 0;
+      }
+			// xwing.SetAngulo(1);
 
 			return 0;
 
     case 'N': //palante
 
-			xwing.SetAngulo(-1);
+      numAnimacion = 2;
+      if(flag == 1){
+        xwing.disparado();
+        flag = 0;
+      }
+			// xwing.SetAngulo(-1);
 
 			return 0;
 
@@ -241,6 +259,29 @@ int Escena::teclaPulsada(unsigned char Tecla1,int x,int y) {
 
 
     }
+}
+
+void Escena::Animar(){
+  dibujar();
+  switch(numAnimacion){
+    case 1:
+      xwing.SetAngulo(1);
+      if(xwing.cerrada())
+        numAnimacion = 0;
+    break;
+    case 2:
+      xwing.SetAngulo(-1);
+      if(xwing.abierta())
+        numAnimacion = 0;
+    break;
+
+    case 3:
+      xwing.Disparar();
+    break;
+    default: break;
+
+  }
+
 }
 
 

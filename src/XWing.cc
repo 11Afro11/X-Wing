@@ -103,6 +103,13 @@ void XWing::Disparar(){
   ala4.Disparar();
 }
 
+void XWing::disparado(){
+  ala1.disparado();
+  ala2.disparado();
+  ala3.disparado();
+  ala4.disparado();
+}
+
 
 
 void XWing::SetAngulo(float val){
@@ -113,4 +120,16 @@ void XWing::SetAngulo(float val){
   if(angAla > 0){
     angAla = 0;
   }
+}
+
+bool XWing::abierta(){
+  if(angAla == 20)
+    return true;
+  return false;
+}
+
+bool XWing::cerrada(){
+  if(angAla == 0)
+    return true;
+  return false;
 }

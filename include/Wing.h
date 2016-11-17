@@ -29,6 +29,7 @@ public:
 		// bala.Rotar(ang, x, y, z);
 	}
 	void Disparar();
+	void disparado();
 
 
 };

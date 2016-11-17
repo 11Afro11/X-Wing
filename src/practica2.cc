@@ -67,10 +67,17 @@ void normal_keys(unsigned char Tecla1,int x,int y)  {
 // posicion y del raton
 
 //***************************************************************************
+void animar(){
+	escena->Animar();
+	glutPostRedisplay();
+}
+
 
 void special_keys(int Tecla1,int x,int y) {
-	if (escena!=NULL)
+	if (escena!=NULL){
 		escena->teclaEspecial(Tecla1,x,y);
+		glutIdleFunc(animar);
+	}
 	glutPostRedisplay();
 }
 
