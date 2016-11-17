@@ -30,3 +30,11 @@ void R2D2::Dibujar(int mode, int colour){
   glPopMatrix();
 
 }
+
+void R2D2::Ejecta(){
+  posy += 4;
+}
+
+void R2D2::Nuevo(){
+  posy = -10;
+}

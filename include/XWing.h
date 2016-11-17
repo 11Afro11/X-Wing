@@ -16,6 +16,7 @@ private:
 	R2D2 arturito;
 	float angAla;
 	int rotacion;
+	int altitud;
 	float posx, posy, posz;
 	float vdirector[3];
 public:
@@ -25,8 +26,13 @@ public:
 	void moveBack();
 	void turnLeft();
 	void turnRight();
+	void up();
+	void down();
 	void SetAngulo(float val);
 	void moveR2();
+	void Ejecta();
+	void Nuevo();
+	void Disparar();
 };
 
 #endif

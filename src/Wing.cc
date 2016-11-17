@@ -8,10 +8,26 @@ Wing::Wing(){
   posx =0;
   posy = 0;
   rotacion = 0;
+  disp = 0;
+  disparo = false;
+  std::vector<GLfloat> v3;
+  v3.push_back(0);
+  v3.push_back(1);
+  v3.push_back(-4);
+
+  v3.push_back(0);
+  v3.push_back(1);
+  v3.push_back(4);
+
+  ObjetoDeRevolucion cil3(v3, 100, 'z');
+
+  bala = cil3;
+  // bala.Trasladar(7, 7, 0);
 
   ala.BoundingBox();
-
-
+  bala.BoundingBox();
+  bala.Escalar(80);
+  bala.Trasladar(95.9, 43.2, -68);
 }
 
 
@@ -21,8 +37,22 @@ void Wing::Dibujar(int mode, int colour){
         // glRotatef(rotacion, 0,0,1);
         glRotatef(-90, 1,0,0);
         // ala.Rotar(-90, 1,0,0);
-        ala.Dibujar(mode, 0);
+        ala.Dibujado(0, 11);
+    glPopMatrix();
+    glPushMatrix();
+        glTranslatef(0,0,disp);
+        if(disparo)
+          bala.Dibujado(1,1);
     glPopMatrix();
   glPopMatrix();
 
+}
+
+void Wing::Disparar(){
+  disparo = true;
+  disp += 5;
+  if(disp > 200){
+    disp = 0;
+    disparo = false;
+  }
 }

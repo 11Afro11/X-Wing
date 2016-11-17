@@ -41,6 +41,8 @@ class Objeto3D{
 		//metodo que dibuja cada cara de un color sin repetirlo
 		void DibujaVaricolor();
 
+		void Dibujado(int col, int secundario);
+
 		//metodo que cambia a un color aleatorio
 		int CambiaColor();
 

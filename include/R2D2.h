@@ -24,6 +24,8 @@ public:
 		rotacion += ang;
 	}
 	void moveR2();
+	void Ejecta();
+	void Nuevo();
 
 
 };

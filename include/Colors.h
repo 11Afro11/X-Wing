@@ -6,6 +6,7 @@ private:
 	std::vector<std::vector<GLfloat> > colores;
 public:
 	Colors(){
+		colores.push_back({0.7,0.75,0.71});//gris
 		colores.push_back({1.0, 0.0, 0.0});// red, duh
 		colores.push_back({0.0, 1.0, 0.0});// green, duh
 		colores.push_back({0.0, 0.0, 1.0});// blue, duh
@@ -17,6 +18,7 @@ public:
 		colores.push_back({0.5, 1.0, 0.0});// greenish yellow
 		colores.push_back({0.5, 1.0, 0.5});// light green
 		colores.push_back({0.0, 0.5, 0.0});// dark green
+		colores.push_back({0.0,0.0,0.0});//black
 
 	}
 

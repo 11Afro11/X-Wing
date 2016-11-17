@@ -153,11 +153,41 @@ int Escena::teclaPulsada(unsigned char Tecla1,int x,int y) {
       xwing.turnLeft();
 
       return 0;
+
+    case 'E': //derecha
+      flag-=2;
+      xwing.up();
+
+      return 0;
+
+    case 'R': //izquierda
+      flag+=2;
+      xwing.down();
+
+      return 0;
     case 'P': //izquierda
 
       xwing.moveR2();
 
       return 0;
+
+
+    case 'O': //palante
+
+			xwing.Ejecta();
+
+			return 0;
+    case 'I': //palante
+
+			xwing.Nuevo();
+
+			return 0;
+
+    case 'Z': //palante
+
+			xwing.Disparar();
+
+			return 0;
 
     case 'M': //palante
 

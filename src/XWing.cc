@@ -5,6 +5,7 @@
 XWing::XWing(){
   angAla = 0;
   rotacion = 0;
+  altitud = 0;
   posx = posy = posz = 0;
   vdirector[0] = vdirector[1] =0;
   vdirector[2] = 1;
@@ -55,6 +56,7 @@ void XWing::Dibujar(int mode, int colour){
 void XWing::moveFoward(){
 
   posx += 2*sin((rotacion*M_PI)/180);
+  // posy += 2*cos((altitud*M_PI)/180)-2*sin((altitud*M_PI)/180);
   posz += 2*cos((rotacion*M_PI)/180);
 
 }
@@ -62,6 +64,7 @@ void XWing::moveFoward(){
 void XWing::moveBack(){
 
   posx -= 2*sin((rotacion*M_PI)/180);
+  // posy -= 2*cos((altitud*M_PI)/180)-2*sin((altitud*M_PI)/180);
   posz -= 2*cos((rotacion*M_PI)/180);
 
 }
@@ -74,8 +77,30 @@ void XWing::turnRight() {
     rotacion = (rotacion - 5) % 360;
 }
 
+void XWing::up(){
+  altitud = (altitud + 5) % 360;
+}
+void XWing::down(){
+  altitud = (altitud -5) % 360;
+}
+
 void XWing::moveR2(){
   arturito.Rotar(2);
+}
+
+void XWing::Ejecta(){
+  arturito.Ejecta();
+}
+
+void XWing::Nuevo(){
+  arturito.Nuevo();
+}
+
+void XWing::Disparar(){
+  ala1.Disparar();
+  ala2.Disparar();
+  ala3.Disparar();
+  ala4.Disparar();
 }
 
 

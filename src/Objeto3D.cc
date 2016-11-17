@@ -62,17 +62,28 @@ void Objeto3D::DibujaAjedrez(){
 	//bucle for que pinta las caras en ajedrez
 	for(int i = 0; i< caras.size(); i+=3){
 		if(i %2 == 0){
-			glColor3f(1.0, 0.0, 0.0);
+			glColor3f(0.7,0.75,0.71);
 			// glColorPointer(3, GL_FLOAT, 0, &colores[colour]);
 		}
 		else{
-			glColor3f(0.0, 1.0, 0.0);
+			glColor3f(0.0, 0.0, 1.0);
 			// glColorPointer(3, GL_FLOAT, 0, &colores[colour]);
 		}
 		glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, &caras[i]);
 
 	}
 
+}
+
+void Objeto3D::Dibujado(int colour, int secundario){
+	glPushMatrix();
+			glPushMatrix();
+					Dibujar(0,colour);
+			glPopMatrix();
+			glPushMatrix();
+					Dibujar(1,secundario);
+			glPopMatrix();
+	glPopMatrix();
 }
 
 void Objeto3D::DibujaVaricolor(){
