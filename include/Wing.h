@@ -20,14 +20,6 @@ private:
 public:
 	Wing();
 	void Dibujar(int mode, int colour);
-	void Escalar(GLfloat x, GLfloat y, GLfloat z){
-		ala.Escalar(x, y, z);
-	}
-
-	void Rotar(GLfloat ang, GLfloat x, GLfloat y, GLfloat z){
-		ala.Rotar(ang, x, y, z);
-		// bala.Rotar(ang, x, y, z);
-	}
 	void Disparar();
 	void disparado();
 
