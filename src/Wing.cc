@@ -48,9 +48,9 @@ void Wing::Dibujar(int mode, int colour){
 
 }
 
-void Wing::Disparar(){
+void Wing::Disparar(float val){
   disparo = true;
-  disp += 5;
+  disp += 5*val;
   if(disp > 200){
     disp = 0;
     disparo = false;

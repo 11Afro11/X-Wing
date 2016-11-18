@@ -15,27 +15,29 @@ private:
 	Wing ala1, ala2,ala3, ala4;
 	R2D2 arturito;
 	float angAla;
-	int rotacion;
-	int altitud;
+	float rotacion;
+	float altitud;
 	float posx, posy, posz;
 	float vdirector[3];
 public:
 	XWing();
 	void Dibujar(int mode, int colour);
-	void moveFoward();
-	void moveBack();
-	void turnLeft();
-	void turnRight();
-	void up();
-	void down();
+	void moveFoward(float val);
+	void moveBack(float val);
+	void turnLeft(float val);
+	void turnRight(float val);
+	void up(float val);
+	void down(float val);
 	void SetAngulo(float val);
-	void moveR2();
-	void Ejecta();
+	void moveR2(float val);
+	void Ejecta(float val);
 	void Nuevo();
-	void Disparar();
+	void Disparar(float val);
 	bool abierta();
 	bool cerrada();
 	void disparado();
+	bool limite();
+	bool posicion();
 };
 
 #endif

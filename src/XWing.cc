@@ -53,54 +53,56 @@ void XWing::Dibujar(int mode, int colour){
 }
 
 
-void XWing::moveFoward(){
+void XWing::moveFoward(float val){
 
-  posx += 2*sin((rotacion*M_PI)/180);
+  posx += val*2*sin((rotacion*M_PI)/180);
   // posy += 2*cos((altitud*M_PI)/180)-2*sin((altitud*M_PI)/180);
-  posz += 2*cos((rotacion*M_PI)/180);
+  posz += val*2*cos((rotacion*M_PI)/180);
 
 }
 
-void XWing::moveBack(){
+void XWing::moveBack(float val){
 
-  posx -= 2*sin((rotacion*M_PI)/180);
+  posx -= val*2*sin((rotacion*M_PI)/180);
   // posy -= 2*cos((altitud*M_PI)/180)-2*sin((altitud*M_PI)/180);
-  posz -= 2*cos((rotacion*M_PI)/180);
+  posz -= val*2*cos((rotacion*M_PI)/180);
 
 }
 
-void XWing::turnLeft() {
-    rotacion = (rotacion + 5) % 360;
+void XWing::turnLeft(float val) {
+    // if(val < 0)val=1;
+    rotacion = (int)(rotacion + 5) % 360;
 }
 
-void XWing::turnRight() {
-    rotacion = (rotacion - 5) % 360;
+void XWing::turnRight(float val) {
+    // if(val < 0)val=1;
+    rotacion = (int)(rotacion - 5) % 360;
 }
 
-void XWing::up(){
-  altitud = (altitud + 5) % 360;
+void XWing::up(float val){
+  altitud = (int)(altitud + 5*val) % 360;
 }
-void XWing::down(){
-  altitud = (altitud -5) % 360;
-}
-
-void XWing::moveR2(){
-  arturito.Rotar(2);
+void XWing::down(float val){
+  altitud = (int)(altitud -5*val) % 360;
 }
 
-void XWing::Ejecta(){
-  arturito.Ejecta();
+void XWing::moveR2(float val){
+  arturito.Rotar(2*val);
+}
+
+void XWing::Ejecta(float val){
+  arturito.Ejecta(val);
 }
 
 void XWing::Nuevo(){
   arturito.Nuevo();
 }
 
-void XWing::Disparar(){
-  ala1.Disparar();
-  ala2.Disparar();
-  ala3.Disparar();
-  ala4.Disparar();
+void XWing::Disparar(float val){
+  ala1.Disparar(val);
+  ala2.Disparar(val);
+  ala3.Disparar(val);
+  ala4.Disparar(val);
 }
 
 void XWing::disparado(){
@@ -113,7 +115,7 @@ void XWing::disparado(){
 
 
 void XWing::SetAngulo(float val){
-  angAla += val;
+  angAla += 1*val;
   if(angAla < -20){
     angAla = -20;
   }
@@ -132,4 +134,11 @@ bool XWing::cerrada(){
   if(angAla == 0)
     return true;
   return false;
+}
+
+bool XWing::limite(){
+  return arturito.limite();
+}
+bool XWing::posicion(){
+  return arturito.posicion();
 }

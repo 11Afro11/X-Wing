@@ -24,9 +24,11 @@ public:
 		rotacion += ang;
 	}
 	void moveR2();
-	void Ejecta();
+	void Ejecta(float val);
 	void Nuevo();
-	
+	bool limite();
+	bool posicion();
+
 
 
 };

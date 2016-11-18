@@ -58,9 +58,13 @@ Body cuerpo;
 Wing wing;
 XWing xwing;
 
-int indice;
+int rotar2;
 
-int flag;
+int shoot;
+
+int timer;
+
+float velAla, velR2giro, velR2ejec, velShoot, velMov;
 
 int tapa;
 int base;

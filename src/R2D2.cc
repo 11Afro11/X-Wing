@@ -31,10 +31,23 @@ void R2D2::Dibujar(int mode, int colour){
 
 }
 
-void R2D2::Ejecta(){
-  posy += 4;
+void R2D2::Ejecta(float val){
+  posy += 1*val;
 }
 
 void R2D2::Nuevo(){
-  posy = -10;
+  posy = -20;
+}
+
+bool R2D2::limite(){
+  if(posy > 100){
+    return true;
+  }
+  return false;
+}
+
+bool R2D2::posicion(){
+  if(posy = -10)
+    return true;
+  return false;
 }
