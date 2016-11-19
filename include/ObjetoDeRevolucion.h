@@ -31,6 +31,7 @@ public:
 	void Resize(int value);
 	void ConSinTapa(int cond);
 	void ConSinBase(int cond);
+	void Aleatorio();
 
 	// void Redivide(int value, char ej, int division);
 	//

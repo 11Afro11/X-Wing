@@ -58,6 +58,7 @@ Body cuerpo;
 Wing wing;
 XWing xwing;
 
+
 int rotar2;
 
 int shoot;
