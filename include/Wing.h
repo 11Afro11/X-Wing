@@ -22,8 +22,6 @@ public:
 	void Dibujar(int mode, int colour);
 	void Disparar(float val);
 	void disparado();
-
-
 };
 
 #endif
