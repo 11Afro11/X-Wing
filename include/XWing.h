@@ -19,6 +19,7 @@ private:
 	float altitud;
 	float posx, posy, posz;
 	float vdirector[3];
+	int dib;
 public:
 	XWing();
 	void Dibujar(int mode, int colour);
@@ -38,6 +39,7 @@ public:
 	void disparado();
 	bool limite();
 	bool posicion();
+	void SetDibMode(int par);
 };
 
 #endif

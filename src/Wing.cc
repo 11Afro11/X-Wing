@@ -28,6 +28,7 @@ Wing::Wing(){
   bala.BoundingBox();
   bala.Escalar(80);
   bala.Trasladar(95.9, 43.2, -68);
+  dib = 5;
 }
 
 
@@ -37,12 +38,12 @@ void Wing::Dibujar(int mode, int colour){
         // glRotatef(rotacion, 0,0,1);
         glRotatef(-90, 1,0,0);
         // ala.Rotar(-90, 1,0,0);
-        ala.Dibujado(0, 11);
+        ala.Dibujado(dib, 0, 11);
     glPopMatrix();
     glPushMatrix();
         glTranslatef(0,0,disp);
         if(disparo)
-          bala.Dibujado(1,1);
+          bala.Dibujado(dib, 1,1);
     glPopMatrix();
   glPopMatrix();
 
@@ -60,4 +61,8 @@ void Wing::Disparar(float val){
 void Wing::disparado(){
   disp = 0;
   disparo = false;
+}
+
+void Wing::SetDibMode(int par){
+  dib = par;
 }

@@ -11,6 +11,7 @@ R2D2::R2D2(){
   r2.BoundingBox();
   r2.Escalar(6.5);
   r2.Trasladar(0,22,0);
+  dib = 3;
 
 }
 
@@ -25,7 +26,7 @@ void R2D2::Dibujar(int mode, int colour){
         glRotatef(-90, 1,0,0);
         // ala.Rotar(-90, 1,0,0);
         // r2.Trasladar(0,2,10);
-        r2.DibujaAjedrez();
+        r2.Dibujado(dib,3, 11);
     glPopMatrix();
   glPopMatrix();
 
@@ -50,4 +51,7 @@ bool R2D2::posicion(){
   if(posy = -10)
     return true;
   return false;
+}
+void R2D2::SetDibMode(int par){
+  dib = par;
 }

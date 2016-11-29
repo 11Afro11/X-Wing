@@ -17,11 +17,13 @@ private:
 	float rotacion;
 	float disp;
 	bool disparo;
+	int dib;
 public:
 	Wing();
 	void Dibujar(int mode, int colour);
 	void Disparar(float val);
 	void disparado();
+	void SetDibMode(int par);
 };
 
 #endif

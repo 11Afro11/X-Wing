@@ -280,6 +280,25 @@ int Escena::teclaPulsada(unsigned char Tecla1,int x,int y) {
       velR2ejec = velR2ejec/2;
     return 0;
 
+    case '7':
+      xwing.SetDibMode(0);
+    return 0;
+
+    case '8':
+      xwing.SetDibMode(1);
+    return 0;
+
+    case '9':
+      xwing.SetDibMode(2);
+    return 0;
+
+    case '4':
+      xwing.SetDibMode(3);
+    return 0;
+
+    case '5':
+      xwing.SetDibMode(5);
+    return 0;
 
 
 
@@ -344,18 +363,9 @@ void Escena::Animar(){
         xwing.SetAngulo(-velAla);
         timer++;
       }
-      if(timer > 140 and timer <= 180){
-        xwing.moveR2(velR2giro);
-        timer++;
-      }
-      if(timer > 180 and timer <= 400){
-        xwing.Ejecta(velR2ejec);
-        timer++;
-      }
-      if(timer > 400){
-        xwing.Nuevo();
+      if(timer > 140){
         timer = 0;
-        numAnimacion = 0;
+        // numAnimacion = 0;
       }
     default: break;
 

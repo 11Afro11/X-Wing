@@ -18,8 +18,10 @@ private:
 	float posx;
 	float posy;
 	float rotacion;
+	int dib;
 public:
 	Body();
 	void Dibujar(int mode, int colour);
+	void SetDibMode(int par);
 };
 #endif

@@ -142,3 +142,13 @@ bool XWing::limite(){
 bool XWing::posicion(){
   return arturito.posicion();
 }
+
+void XWing::SetDibMode(int par){
+  cuerpo.SetDibMode(par);
+  ala1.SetDibMode(par);
+  ala2.SetDibMode(par);
+  ala3.SetDibMode(par);
+  ala4.SetDibMode(par);
+  arturito.SetDibMode(par);
+
+}

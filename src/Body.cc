@@ -37,6 +37,7 @@ Body::Body(){
   posx =0;
   posy = 0;
   rotacion = 0;
+  dib = 5;
 
 
 }
@@ -47,33 +48,38 @@ void Body::Dibujar(int mode, int colour){
     glPushMatrix();
         // base.Rotar(rotacion, 0, 1, 0);
         base.Rotar(-90, 1,0,0);
-        base.Dibujado(0, 11);
+        base.Dibujado(dib, 0, 11);
     glPopMatrix();
     glPushMatrix();
         // cabina.Rotar(rotacion, 0, 1, 0);
         cabina.Rotar(-90, 1,0,0);
-        cabina.Dibujado(6, 11);
+        cabina.Dibujado(dib, 6, 11);
     glPopMatrix();
     glPushMatrix();
         // hierro.Rotar(rotacion, 0, 1, 0);
         hierro.Rotar(-90,1,0,0);
-        hierro.Dibujado(11, 11);
+        hierro.Dibujado(dib, 11, 11);
     glPopMatrix();
     glPushMatrix();
         // puntita.Rotar(rotacion, 0, 1, 0);
         puntita.Rotar(-90,1,0,0);
-        puntita.Dibujado(0, 11);
+        puntita.Dibujado(dib, 0, 11);
     glPopMatrix();
     glPushMatrix();
         // cosa.Rotar(rotacion, 0, 1, 0);
         cosa.Rotar(-90,1,0,0);
-        cosa.Dibujado(11, 11);
+        cosa.Dibujado(dib, 11, 11);
     glPopMatrix();
     glPushMatrix();
         // atras.Rotar(rotacion, 0, 1, 0);
         atras.Rotar(-90,1,0,0);
-        atras.Dibujado(11, 11);
+        atras.Dibujado(dib, 11, 11);
     glPopMatrix();
   glPopMatrix();
 
+}
+
+
+void Body::SetDibMode(int par){
+  dib = par;
 }

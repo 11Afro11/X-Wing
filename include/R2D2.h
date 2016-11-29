@@ -13,6 +13,7 @@ private:
 	float posx;
 	float posy;
 	float rotacion;
+	int dib;
 public:
 	R2D2();
 	void Dibujar(int mode, int colour);
@@ -28,6 +29,7 @@ public:
 	void Nuevo();
 	bool limite();
 	bool posicion();
+	void SetDibMode(int par);
 
 
 

@@ -75,15 +75,25 @@ void Objeto3D::DibujaAjedrez(){
 
 }
 
-void Objeto3D::Dibujado(int colour, int secundario){
-	glPushMatrix();
-			glPushMatrix();
-					Dibujar(0,colour);
-			glPopMatrix();
-			glPushMatrix();
-					Dibujar(1,secundario);
-			glPopMatrix();
-	glPopMatrix();
+void Objeto3D::Dibujado(int mode, int colour, int secundario){
+	if(mode < 4){
+		if(mode == 3){
+			DibujaAjedrez();
+		}
+		else{
+			Dibujar(mode, colour);
+		}
+	}
+	else{
+		glPushMatrix();
+				glPushMatrix();
+						Dibujar(0,colour);
+				glPopMatrix();
+				glPushMatrix();
+						Dibujar(1,secundario);
+				glPopMatrix();
+		glPopMatrix();
+	}
 }
 
 void Objeto3D::DibujaVaricolor(){
