@@ -9,9 +9,9 @@ OBJ = obj
 LIB = lib
 INC = include
 
-NAME=Practica2
+NAME=XWING
 
-TARGETS= practica3
+TARGETS= XWING
 
 # banderas para el compilador (C y C++). Se indican los directorios donde se puenden
 # encontrar ficheros para incluir mediante la opcion -I
@@ -36,7 +36,7 @@ CC = g++
 # definicion de objetos
 #
 HEADERS = $(addprefix $(INC)/, escena.h ejes.h Objeto3D.h Colors.h file_ply_stl.h Ply.h ObjetoDeRevolucion.h Body.h Wing.h XWing.h R2D2.h)
-OBJECTS= $(addprefix $(OBJ)/, escena.o ejes.o practica3.o Objeto3D.o file_ply_stl.o Ply.o ObjetoDeRevolucion.o Body.o Wing.o XWing.o R2D2.o)
+OBJECTS= $(addprefix $(OBJ)/, escena.o ejes.o Nave.o Objeto3D.o file_ply_stl.o Ply.o ObjetoDeRevolucion.o Body.o Wing.o XWing.o R2D2.o)
 # orden que sera ejecutada por defecto
 #
 default : $(TARGETS)
@@ -53,7 +53,7 @@ $(OBJ)/%.o: $(SRC)/%.cc $(HEADERS)
 #
 clean:
 	-rm -f $(OBJ)/* $(BIN)/*
-	-rm practica3
+	-rm XWING
 	-rm ./*.zip
 
 #
