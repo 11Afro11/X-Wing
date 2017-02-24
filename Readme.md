@@ -6,7 +6,7 @@ EJECUCION:
 
 `$make`
 
-`$./practica2`
+`$./XWING`
 
 COMANDOS:
 
