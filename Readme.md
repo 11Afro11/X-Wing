@@ -5,6 +5,7 @@ Modelado de una nave de Star Wars en OpenGL
 EJECUCION:
 
 `$make`
+
 `$./practica2`
 
 COMANDOS:
