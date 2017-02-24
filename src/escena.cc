@@ -40,6 +40,8 @@ Escena::Escena(){
     base = 0;
     timer = 0;
     velAla = velR2giro = velR2ejec = velShoot = velMov = 1;
+    motores = true;
+    enciendeapaga = 0;
 
 }
 
@@ -300,6 +302,21 @@ int Escena::teclaPulsada(unsigned char Tecla1,int x,int y) {
       xwing.SetDibMode(5);
     return 0;
 
+    case '6':
+      xwing.enciendeApaga(false);
+    return 0;
+    case '3':
+      xwing.enciendeApaga(true);
+    return 0;
+
+    case '1':
+      motores = true;
+    return 0;
+
+    case '2':
+      motores = false;
+    return 0;
+
 
 
 		default: return 0;
@@ -369,6 +386,16 @@ void Escena::Animar(){
       }
     default: break;
 
+  }
+  if(motores){
+    if(enciendeapaga == 0){
+      xwing.prenderFuego();
+      enciendeapaga = 1;
+    }
+    else{
+      xwing.apagarFuego();
+      enciendeapaga = 0;
+    }
   }
 
 }

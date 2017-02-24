@@ -66,7 +66,8 @@ int shoot;
 int timer;
 
 float velAla, velR2giro, velR2ejec, velShoot, velMov;
-
+bool motores;
+int enciendeapaga;
 int tapa;
 int base;
 

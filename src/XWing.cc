@@ -25,25 +25,25 @@ void XWing::Dibujar(int mode, int colour){
     glPushMatrix();
         glRotatef(-angAla-20, 0,0,1);
         // glRotatef(-90, 1,0,0);
-        ala1.Dibujar(mode, 0);
+        ala.Dibujar(mode, 0);
     glPopMatrix();
     glPushMatrix();
         glRotatef(angAla+20, 0,0,1);
         // glRotatef(-90, 1,0,0);
         glScalef(-1, 1, 1);
-        ala2.Dibujar(mode, 0);
+        ala.Dibujar(mode, 0);
     glPopMatrix();
     glPushMatrix();
         glRotatef(angAla+20, 0,0,1);
         // glRotatef(-90, 1,0,0);
         glScalef(1, -1, 1);
-        ala3.Dibujar(mode, 0);
+        ala.Dibujar(mode, 0);
     glPopMatrix();
     glPushMatrix();
         glRotatef(-angAla-20, 0,0,1);
         // glRotatef(-90, 1,0,0);
         glScalef(-1, -1, 1);
-        ala4.Dibujar(mode, 0);
+        ala.Dibujar(mode, 0);
     glPopMatrix();
         // ala.Rotar(-90, 1,0,0);
         cuerpo.Dibujar(mode, 0);
@@ -99,17 +99,11 @@ void XWing::Nuevo(){
 }
 
 void XWing::Disparar(float val){
-  ala1.Disparar(val);
-  ala2.Disparar(val);
-  ala3.Disparar(val);
-  ala4.Disparar(val);
+  ala.Disparar(val);
 }
 
 void XWing::disparado(){
-  ala1.disparado();
-  ala2.disparado();
-  ala3.disparado();
-  ala4.disparado();
+  ala.disparado();
 }
 
 
@@ -145,10 +139,14 @@ bool XWing::posicion(){
 
 void XWing::SetDibMode(int par){
   cuerpo.SetDibMode(par);
-  ala1.SetDibMode(par);
-  ala2.SetDibMode(par);
-  ala3.SetDibMode(par);
-  ala4.SetDibMode(par);
+  ala.SetDibMode(par);
   arturito.SetDibMode(par);
 
+}
+void XWing::prenderFuego(){
+  ala.prenderFuego();
+}
+
+void XWing::apagarFuego(){
+  ala.apagarFuego();
 }

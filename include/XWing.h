@@ -12,7 +12,7 @@
 class XWing{ //hereda de Objeto3D
 private:
 	Body cuerpo;
-	Wing ala1, ala2,ala3, ala4;
+	Wing ala;
 	R2D2 arturito;
 	float angAla;
 	float rotacion;
@@ -40,6 +40,11 @@ public:
 	bool limite();
 	bool posicion();
 	void SetDibMode(int par);
+	void prenderFuego();
+	void apagarFuego();
+	void enciendeApaga(bool mecha){
+		ala.enciendeApaga(mecha);
+	}
 };
 
 #endif
