@@ -1,4 +1,4 @@
-#X-WING OPENGL
+# X-WING OPENGL
 
 Modelado de una nave de Star Wars en OpenGL
 
